@@ -1,0 +1,49 @@
+mql5
+//+------------------------------------------------------------------+
+//|                                               DailySessions.mq5 |
+//|                Copyright 2022, Forex Robot Easy Team               |
+//|                        https://forexroboteasy.com                  |
+//+------------------------------------------------------------------+
+#property copyright 'Copyright 2022, Forex Robot Easy Team'
+#property link      'https://forexroboteasy.com'
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+#include <Trade\Trade.mqh>
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+   // Your code for session box creation and market activity tracking here
+
+   // Example code for session box customization
+   int boxColor = clrRed;
+   int boxStyle = STYLE_SOLID;
+   int boxWidth = 2;
+
+   // Example code for trading functions
+   CTrade trade;
+   double lotSize = 0.1;
+   double stopLoss = 50.0;
+   double takeProfit = 100.0;
+   trade.Buy(lotSize, Symbol(), 0, Ask, stopLoss, takeProfit, 'Buy order');
+
+   // Your code for handling multiple time zones here
+
+   // Example code for testing session box representation and functionality
+   Print('Session boxes created successfully!');
+}
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+   // Your code for deinitialization here
+
+   // Example code for displaying a message upon deinitialization
+   Print('DailySessions deinitialized successfully!');
+}
